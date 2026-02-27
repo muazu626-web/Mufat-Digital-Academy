@@ -27,10 +27,13 @@ nav a {
 }
 
 .hero {
-    text-align: center;
-    padding: 120px 20px;
     background: linear-gradient(to right, #0a1f44, #132c63);
     color: white;
+    padding: 120px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero h1 {
@@ -43,13 +46,33 @@ nav a {
     margin-bottom: 30px;
 }
 
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
 .btn {
     background: white;
     color: #0a1f44;
     padding: 12px 25px;
     border-radius: 5px;
-    text-decoration: none;
     font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #eaeaea;
+}
+
+.btn-secondary {
+    background: #ffcd00;
+    color: #0a1f44;
+}
+
+.btn-secondary:hover {
+    background: #f2b800;
 }
 
 .about {
@@ -137,18 +160,7 @@ footer {
 }
 
 /* Mobile */
-@me@media (max-width: 768px) {
-
-    header {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-
-    nav {
-        margin-top: 10px;
-    }
-
+@media (max-width: 768px) {
     .hero h1 {
         font-size: 28px;
     }
@@ -157,43 +169,17 @@ footer {
         font-size: 16px;
     }
 
-    .hero .btn {
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-buttons .btn, .hero-buttons .btn-secondary {
+        width: 80%;
+        margin: 0 auto;
         display: block;
-        margin: 10px auto;
     }
-
-    .program-list, .pricing-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .program, .card {
-        width: 90%;
-        margin: 15px 0;
-    }
-
-    .testimonials .card {
-        width: 90%;
-        margin: 15px 0;
-    }
-
-    .contact input, .contact textarea {
-        width: 90%;
-    }
-
-}dia (max-width: 768px) {
-    header {
-        flex-direction: column;
-    }
-
-    nav {
-        margin-top: 10px;
-    }
-
-    .card {
-        width: 90%;
-    }
+}
 }
 /* Hide menu toggle on desktop */
 .menu-toggle {
