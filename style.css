@@ -131,3 +131,79 @@ p {
 .navbar a:hover {
     color: var(--primary-red);
 }
+/* CONTACT FORM STYLING */
+form input, form select, form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--primary-red);
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #a10f19;
+}
+#advancedCoursesDiv select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    /* Program Cards */
+    .programs {
+        flex-direction: column;
+        padding: 40px 10px;
+    }
+
+    .program-card {
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 14px;
+        padding: 20px 10px;
+    }
+}
