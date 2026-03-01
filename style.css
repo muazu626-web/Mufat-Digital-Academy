@@ -1,3 +1,8 @@
+/* SMOOTH SCROLL */
+html {
+    scroll-behavior: smooth;
+}
+/* BRAND COLORS */
 :root {
     --primary-red: #C1121F;
     --baby-pink: #F8C8DC;
@@ -12,14 +17,114 @@
     box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
     font-family: 'Poppins', sans-serif;
-    background: var(--white);
+    background-color: var(--white);
     color: var(--dark-text);
     line-height: 1.6;
+    text-align: center;
+    padding: 40px 20px;
 }
 
-/* Navbar */
+/* Headings */
+h1 {
+    color: var(--primary-red);
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+p {
+    color: var(--dark-text);
+    font-size: 18px;
+}
+
+/* Buttons (we’ll use later) */
+.btn {
+    background-color: var(--primary-red);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #a10f19;
+}
+/* HERO SECTION WITH OVERLAY FOR READABLE TEXT */
+.hero {
+    position: relative;
+    background: url('images/hero-background.png') no-repeat center center/cover;
+    padding: 100px 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    color: var(--white);
+    text-align: center;
+    z-index: 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35); /* subtle dark overlay */
+    border-radius: 16px;
+    z-index: 0;
+}
+
+.hero h1, .hero p, .hero .btn {
+    position: relative;
+    z-index: 1; /* ensures text is above overlay */
+}
+.hero p {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.hero .btn {
+    font-size: 18px;
+}
+/* PROGRAMS SECTION */
+.programs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px 10%;
+}
+
+.program-card {
+    background: var(--white);
+    padding: 30px;
+    width: 400px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    text-align: left;
+}
+
+.program-card h2 {
+    color: var(--primary-red);
+    margin-bottom: 10px;
+}
+
+.program-card ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.program-card h3 {
+    margin-top: 15px;
+}
+
+.coming-soon {
+    background: var(--baby-pink);
+}
+/* NAVBAR & LOGO */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -27,6 +132,12 @@ body {
     padding: 20px 8%;
     background: var(--white);
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+    display: block;
 }
 
 .navbar ul {
@@ -44,40 +155,186 @@ body {
 .navbar a:hover {
     color: var(--primary-red);
 }
-
-/* Hero */
-.hero {
-    background: var(--baby-pink);
-    text-align: center;
-    padding: 100px 20px;
-}
-
-.hero h1 {
-    font-size: 40px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-.btn {
-    background: var(--primary-red);
-    color: var(--white);
-    padding: 12px 28px;
+/* CONTACT FORM STYLING */
+form input, form select, form textarea {
+    width: 100%;
+    padding: 12px;
     border-radius: 8px;
-    text-decoration: none;
-    display: inline-block;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--primary-red);
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #a10f19;
+}
+#advancedCoursesDiv select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    /* Program Cards */
+    .programs {
+        flex-direction: column;
+        padding: 40px 10px;
+    }
+
+    .program-card {
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 14px;
+        padding: 20px 10px;
+    }
+}
+/* Smooth hover transition for buttons */
+.btn {
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
-    background: #a10f19;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+/* Smooth hover for program cards */
+.program-card {
+    transition: all 0.3s ease;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: var(--baby-pink);
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
 }
+/* HERO TEXT STYLING */
+.hero h1 {
+    color: var(--white); /* white text */
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6); /* subtle shadow for contrast */
+}
+
+.hero p {
+    color: var(--white);
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.hero .btn {
+    background-color: var(--primary-red);
+    color: var(--white);
+    padding: 14px 28px;
+    font-size: 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hero .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+/* HERO TEXT RESPONSIVE */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero .btn {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+}
+/* COURSES SECTION TITLE */
+.section-title {
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    color: var(--primary-red);
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+/* Hidden initially */
+.section-title {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* Visible when scrolled into view */
+.section-title.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+@media (max-width: 768px) {
+    .section-title {
+        transform: translateY(15px);
+        font-size: 28px;
+    }
+}
+/* Hidden initially */
+.program-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* Visible when scrolled into view */
+.program-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Add this to style.css */
+.program-card:nth-child(1) { transition-delay: 0.1s; }
+.program-card:nth-child(2) { transition-delay: 0.3s; }
+.program-card:nth-child(3) { transition-delay: 0.5s; }

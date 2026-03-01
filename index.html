@@ -4,37 +4,194 @@
     <meta charset="UTF-8">
     <title>Mufat Digital Academy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
+    <!-- NAVBAR -->
     <header class="navbar">
-        <div class="logo">Mufat Digital Academy</div>
+        <div class="logo">
+            <img src="images/MDA logo.png" alt="Mufat Digital Academy Logo">
+        </div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
         <h1>Build Employable Digital Skills</h1>
         <p>Structured 4-month programs designed to increase job readiness and professionalism.</p>
-        <a href="courses.html" class="btn">View Programs</a>
+        <a href="#courses" class="btn">View Programs</a>
     </section>
 
+    <!-- COURSES SECTION -->
+<section id="courses" class="programs">
+    <!-- Section Title -->
+    <h2 class="section-title">Our Programs</h2>
+
+    <!-- FOUNDATIONAL DIGITAL SKILLS -->
+    <div class="program-card">
+        <h2>Foundational Digital Skills</h2>
+        <p>Combined 4-month program designed to prepare students for workplace readiness.</p>
+        <ul>
+            <li>Computer Keyboarding</li>
+            <li>Desktop Publishing</li>
+            <li>Spoken English</li>
+        </ul>
+        <h3>Payment Options</h3>
+        <p><strong>Monthly:</strong> ₦10,000 × 4 months</p>
+        <p><strong>Full Payment:</strong> ₦36,000 <em>(10% discount)</em></p>
+        <a href="#contact" class="btn">Enroll Now</a>
+    </div>
+
+    <!-- ADVANCED DIGITAL SKILLS -->
+    <div class="program-card">
+        <h2>Advanced Digital Skills</h2>
+        <p>4-month specialized programs for high-demand digital careers.</p>
+        <ul>
+            <li>App Development</li>
+            <li>Web Development</li>
+            <li>Data Analysis</li>
+            <li>Graphics Designing</li>
+            <li>Videography</li>
+        </ul>
+        <h3>Payment Options</h3>
+        <p><strong>Monthly:</strong> ₦15,000 × 4 months</p>
+        <p><strong>Full Payment:</strong> ₦54,000 <em>(10% discount)</em></p>
+        <a href="#contact" class="btn">Join Waiting List</a>
+    </div>
+</section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="hero" style="background: var(--baby-pink); text-align: left; padding: 80px 10%; color: var(--dark-text);">
+        <h2>About Mufat Digital Academy</h2>
+        <p>Mufat Digital Academy trains students to increase their chances of getting employed by equipping them with professional digital skills. Our programs focus on both foundational and advanced digital skills for career readiness.</p>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="programs">
+        <div class="program-card">
+            <h2>Contact Information</h2>
+            <p><strong>Phone:</strong> 09134291604</p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/2349134291604" target="_blank" class="btn">Chat on WhatsApp</a></p>
+            <p><strong>Location:</strong> Lafiagi, Kwara State, Nigeria</p>
+        </div>
+
+        <div class="program-card">
+            <h2>Apply / Send a Message</h2>
+            <form id="registrationForm" action="#" method="post">
+
+                <label for="name">Full Name</label><br>
+                <input type="text" id="name" name="name" placeholder="Your Name" required><br><br>
+
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required><br><br>
+
+                <label for="phone">Phone Number</label><br>
+                <input type="tel" id="phone" name="phone" placeholder="08012345678" required><br><br>
+
+                <label for="program">Program Interested In</label><br>
+                <select id="program" name="program" required>
+                    <option value="">Select Program</option>
+                    <option value="foundational">Foundational Digital Skills</option>
+                    <option value="advanced">Advanced Digital Skills</option>
+                </select><br><br>
+
+                <div id="advancedCoursesDiv" style="display:none;">
+                    <label for="advancedCourse">Select Course</label><br>
+                    <select id="advancedCourse" name="advancedCourse">
+                        <option value="">Select Advanced Course</option>
+                        <option value="appDevelopment">App Development</option>
+                        <option value="webDevelopment">Web Development</option>
+                        <option value="dataAnalysis">Data Analysis</option>
+                        <option value="graphicsDesigning">Graphics Designing</option>
+                        <option value="videography">Videography</option>
+                    </select><br><br>
+                </div>
+
+                <label for="message">Message (Optional)</label><br>
+                <textarea id="message" name="message" rows="4" placeholder="Your message"></textarea><br><br>
+
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p>© 2026 Mufat Digital Academy | Lafiagi, Kwara State | +234 913 429 1604</p>
+        <p>© 2026 Mufat Digital Academy | Lafiagi, Kwara State, Nigeria</p>
+        <p>Phone: 09134291604</p>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Dependent dropdown for Advanced Courses
+        const programSelect = document.getElementById('program');
+        const advancedCoursesDiv = document.getElementById('advancedCoursesDiv');
+
+        programSelect.addEventListener('change', function() {
+            if(this.value === 'advanced') {
+                advancedCoursesDiv.style.display = 'block';
+                document.getElementById('advancedCourse').required = true;
+            } else {
+                advancedCoursesDiv.style.display = 'none';
+                document.getElementById('advancedCourse').required = false;
+            }
+        });
+
+        // Smooth scroll for anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+<script>
+// Animate "Our Programs" title on scroll
+const sectionTitle = document.querySelector('.section-title');
+
+function revealTitle() {
+    const sectionTop = sectionTitle.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if(sectionTop < screenHeight - 100) {
+        sectionTitle.classList.add('visible');
+    }
+}
+
+window.addEventListener('scroll', revealTitle);
+window.addEventListener('load', revealTitle); // also trigger on page load
+
+// Animate program cards on scroll
+const cards = document.querySelectorAll('.program-card');
+
+function revealCards() {
+    const screenHeight = window.innerHeight;
+
+    cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        if(cardTop < screenHeight - 100) {
+            card.classList.add('visible');
+        }
+    });
+}
+
+window.addEventListener('scroll', revealCards);
+window.addEventListener('load', revealCards); // trigger on page load
+</script>
 
 </body>
 </html>
