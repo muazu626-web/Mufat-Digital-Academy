@@ -96,7 +96,7 @@ const form = document.getElementById('registrationForm');
 const programSelect = document.getElementById('program');
 const advancedCoursesDiv = document.getElementById('advancedCoursesDiv');
 
-const scriptURL = "https://script.google.com/macros/s/AKfycby2Zys9y-XWPDzQ0ZBIeUme4RsrXBUEnsKoVPgyouuYCrnNcckIqcS6CRyZ5ZZGFASA-A/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzOdFkxDXGCKKZ3g8_aHL_HuPN_3ZDTcD3Td46PckEy6bHX7uWxOkLRlxZmRccqdLzyQQ/exec";
 
 programSelect.addEventListener('change', function() {
     if(this.value === 'advanced') {
@@ -111,23 +111,11 @@ programSelect.addEventListener('change', function() {
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        program: document.getElementById('program').value,
-        advancedCourse: document.getElementById('advancedCourse').value,
-        message: document.getElementById('message').value
-    };
-
     fetch(scriptURL, {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-            "Content-Type": "application/json"
-        }
+        method: 'POST',
+        body: new FormData(form)
     })
-    .then(response => response.json())
+    .then(response => response.text())
     .then(data => {
         alert("Application submitted successfully!");
         form.reset();
@@ -138,6 +126,5 @@ form.addEventListener('submit', function(e) {
     });
 });
 </script>
-
 </body>
 </html>

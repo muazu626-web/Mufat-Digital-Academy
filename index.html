@@ -12,11 +12,14 @@
 <body>
 
     <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="logo">
-            <img src="images/MDA logo.png" alt="Mufat Digital Academy Logo">
+   <header class="navbar">
+    <div class="nav-container">
+
+        <div class="brand">
+            <span class="academy-name">Mufat Digital Academy</span>
         </div>
-        <nav>
+
+        <nav id="navMenu">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="courses.html">Courses</a></li>
@@ -24,7 +27,15 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-    </header>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+</header>
 
     <!-- HERO SECTION -->
     <section class="hero">
@@ -34,10 +45,44 @@
     </section>
 
     <!-- FOOTER -->
-    <footer>
-        <p>© 2026 Mufat Digital Academy | Lafiagi, Kwara State, Nigeria</p>
-        <p>Phone: 09134291604</p>
-    </footer>
+   <footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-col">
+            <h3>Mufat Digital Academy</h3>
+            <p>Empowering students in Lafiagi and beyond with practical digital skills for the modern world.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="contact.html">Apply Now</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p>📍 Lafiagi, Kwara State, Nigeria</p>
+            <p>📞 09134291604</p>
+            <p>💬 WhatsApp Available</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Mufat Digital Academy. All rights reserved.</p>
+    </div>
+</footer>
+<script>
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+</script>
 
 </body>
 </html>
