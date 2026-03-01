@@ -1,62 +1,92 @@
-/* SMOOTH SCROLL */
-html {
-    scroll-behavior: smooth;
-}
-/* BRAND COLORS */
+/* ===========================
+   BRAND COLORS
+=========================== */
 :root {
-    --primary-red: #C1121F;
-    --baby-pink: #F8C8DC;
-    --white: #ffffff;
-    --dark-text: #222222;
+  --primary-red: #C1121F;
+  --baby-pink: #F8C8DC;
+  --white: #ffffff;
+  --dark-text: #222222;
+  --turquoise: #00bcd4; /* optional accent for buttons or highlights */
 }
 
-/* Reset */
+/* ===========================
+   RESET
+=========================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Body Styling */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--white);
-    color: var(--dark-text);
-    line-height: 1.6;
-    text-align: center;
-    padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--white);
+  color: var(--dark-text);
+  line-height: 1.6;
+  text-align: center;
 }
 
-/* Headings */
+/* ===========================
+   CONTAINER
+=========================== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===========================
+   HEADINGS & TEXT
+=========================== */
 h1 {
-    color: var(--primary-red);
-    font-size: 36px;
-    margin-bottom: 20px;
+  color: var(--primary-red);
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: var(--primary-red);
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+h3 {
+  margin-top: 15px;
+  font-size: 1.2rem;
 }
 
 p {
-    color: var(--dark-text);
-    font-size: 18px;
+  font-size: 1.1rem;
+  color: var(--dark-text);
+  margin-bottom: 15px;
 }
 
-/* Buttons (we’ll use later) */
+/* ===========================
+   BUTTONS
+=========================== */
 .btn {
-    background-color: var(--primary-red);
-    color: var(--white);
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 20px;
+  background-color: var(--primary-red);
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #a10f19;
+  background-color: #a10f19;
+  transform: translateY(-2px);
 }
+
+/* ===========================
+   HERO SECTION
+=========================== */
 /* HERO SECTION WITH OVERLAY FOR READABLE TEXT */
 .hero {
     position: relative;
-    background: url('images/hero-background.png') no-repeat center center/cover;
+    background: url('hero-background.png') no-repeat center center/cover;
     padding: 100px 20px;
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
@@ -81,79 +111,116 @@ p {
     position: relative;
     z-index: 1; /* ensures text is above overlay */
 }
+
 .hero p {
-    font-size: 20px;
-    margin: 20px 0;
+  font-size: 1.25rem;
+  margin: 20px 0;
 }
 
-.hero .btn {
-    font-size: 18px;
-}
-/* PROGRAMS SECTION */
-.programs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    padding: 60px 10%;
-}
-
-.program-card {
-    background: var(--white);
-    padding: 30px;
-    width: 400px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    text-align: left;
-}
-
-.program-card h2 {
-    color: var(--primary-red);
-    margin-bottom: 10px;
-}
-
-.program-card ul {
-    padding-left: 20px;
-    margin-bottom: 15px;
-}
-
-.program-card h3 {
-    margin-top: 15px;
-}
-
-.coming-soon {
-    background: var(--baby-pink);
-}
-/* NAVBAR & LOGO */
+/* ===========================
+   NAVBAR & LOGO
+=========================== */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 8%;
-    background: var(--white);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: var(--white);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo img {
-    height: 60px;
-    width: auto;
-    display: block;
+  height: 60px;
+  width: auto;
 }
 
 .navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
+  list-style: none;
+  display: flex;
+  gap: 25px;
 }
 
 .navbar a {
-    text-decoration: none;
-    color: var(--dark-text);
-    font-weight: 500;
+  text-decoration: none;
+  color: var(--dark-text);
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-    color: var(--primary-red);
+  color: var(--primary-red);
+}
+
+/* ===========================
+   PROGRAMS SECTION
+=========================== */
+.programs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 5%;
+}
+
+.program-card {
+  background: var(--white);
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.program-card ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.coming-soon {
+  background: var(--baby-pink);
+}
+
+.badge {
+  display: inline-block;
+  background: var(--primary-red);
+  color: var(--white);
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-left: 10px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .programs {
+    gap: 30px;
+  }
+
+  .program-card {
+    max-width: 100%;
+  }
 }
 /* CONTACT FORM STYLING */
 form input, form select, form textarea {
@@ -295,46 +362,3 @@ form button:hover {
         padding: 12px 24px;
     }
 }
-/* COURSES SECTION TITLE */
-.section-title {
-    width: 100%;
-    text-align: center;
-    font-size: 36px;
-    color: var(--primary-red);
-    margin-bottom: 40px;
-    font-weight: 700;
-}
-/* Hidden initially */
-.section-title {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-
-/* Visible when scrolled into view */
-.section-title.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-@media (max-width: 768px) {
-    .section-title {
-        transform: translateY(15px);
-        font-size: 28px;
-    }
-}
-/* Hidden initially */
-.program-card {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-
-/* Visible when scrolled into view */
-.program-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-/* Add this to style.css */
-.program-card:nth-child(1) { transition-delay: 0.1s; }
-.program-card:nth-child(2) { transition-delay: 0.3s; }
-.program-card:nth-child(3) { transition-delay: 0.5s; }

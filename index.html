@@ -1,241 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mufat Digital Academy</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-<style>
-/* Base Styles */
-html { scroll-behavior: smooth; }
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0; padding:0; line-height:1.6; color:#001f3f; }
-
-/* Header / Navigation */
-header { 
-    background:#001f3f; 
-    color:white; 
-    padding:15px 20px; 
-    display:flex; 
-    justify-content: space-between; 
-    align-items:center; 
-    position: sticky; 
-    top:0; 
-    z-index:1000; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-header h1 { margin:0; font-size:1.5em; }
-nav { display:flex; gap:15px; }
-nav a { color:white; font-weight:bold; transition:color 0.3s; }
-nav a:hover { color:#00bfff; }
-.hamburger { display:none; font-size:1.5em; cursor:pointer; }
-
-/* Hero Section */
-.hero {
-    background: url('https://via.placeholder.com/1200x500') no-repeat center center/cover;
-    height:500px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:white;
-    position: relative;
-}
-.hero h1 { font-size:2em; margin-bottom:20px; }
-.hero p { font-size:1.1em; margin-bottom:30px; }
-.hero .btn { 
-    background:#00bfff; 
-    color:white; 
-    padding:12px 25px; 
-    border-radius:5px; 
-    margin:5px;
-    font-weight:bold;
-    transition: background 0.3s, transform 0.3s;
-}
-.hero .btn:hover { 
-    background:#001f3f;
-    transform: scale(1.05);
-}
-
-/* Sections */
-section { padding:60px 20px; max-width:1000px; margin:auto; }
-section h2 { text-align:center; margin-bottom:40px; }
-
-/* Cards */
-.cards { display:flex; flex-wrap: wrap; gap:20px; justify-content:center; }
-.card { background:#f1f9ff; padding:20px; border-radius:10px; flex:1 1 250px; text-align:center; transition: transform 0.3s, box-shadow 0.3s; }
-.card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-.card i { font-size:50px; margin-bottom:15px; color:#00bfff; }
-
-/* Buttons inside cards */
-.card button { 
-    background:#001f3f; 
-    color:white; 
-    border:none; 
-    padding:10px 20px; 
-    border-radius:5px; 
-    margin-top:10px;
-    font-weight:bold;
-    cursor:pointer;
-    transition: background 0.3s, transform 0.3s;
-}
-.card button:hover { background:#00bfff; transform:scale(1.05); }
-
-/* CTA */
-.cta { background:#00bfff; color:white; text-align:center; padding:40px 20px; }
-.cta a { display:inline-block; background:#001f3f; color:white; padding:15px 30px; border-radius:5px; font-weight:bold; margin-top:20px; transition: transform 0.3s, background 0.3s; }
-.cta a:hover { transform: scale(1.05); background:#000a1a; }
-
-/* Footer */
-footer { background:#001f3f; color:white; text-align:center; padding:30px 20px; }
-
-/* Responsive */
-@media(max-width:768px){
-    nav { display:none; flex-direction:column; background:#001f3f; position:absolute; top:60px; right:10px; width:180px; padding:20px; border-radius:5px; }
-    nav.active { display:flex; }
-    .hamburger { display:block; color:white; }
-    .hero { height:400px; }
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Mufat Digital Academy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Header -->
-<header>
-    <h1>Mufat Digital Academy</h1>
-    <i class="bi bi-list hamburger" onclick="toggleMenu()"></i>
-    <nav id="nav-links">
-        <a href="#about">About Us</a>
-        <a href="#courses">Courses</a>
-        <a href="#benefits">Benefits</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="images/MDA logo.png" alt="Mufat Digital Academy Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- Hero Section -->
-<section class="hero">
-    <h1>Empowering You with Digital Skills</h1>
-    <p>Learn practical skills for career growth and independence</p>
-    <div>
-        <a href="#courses" class="btn">View Programs</a>
-        <a href="https://wa.me/2349134291604" class="btn" target="_blank">WhatsApp</a>
-    </div>
-</section>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Build Employable Digital Skills</h1>
+        <p>Structured 4-month programs designed to increase job readiness and professionalism.</p>
+        <a href="courses.html" class="btn">View Programs</a>
+    </section>
 
-<!-- About Us -->
-<section id="about">
-    <h2>About Us</h2>
-    <p style="text-align:center;">Mufat Digital Academy is dedicated to equipping students with both foundational and advanced digital skills. Our programs are designed to help learners excel in technology, boost careers, and gain confidence in the digital world.</p>
-</section>
-
-<!-- Courses -->
-<section id="courses">
-    <h2>Our Programs</h2>
-
-    <!-- Foundational Digital Skills -->
-    <h3 style="text-align:center; margin-bottom:20px;">Foundational Digital Skills</h3>
-    <div class="cards">
-        <div class="card">
-            <i class="bi bi-chat-dots"></i>
-            <h4>Spoken English</h4>
-        </div>
-        <div class="card">
-            <i class="bi bi-keyboard"></i>
-            <h4>Computer Keyboarding</h4>
-        </div>
-        <div class="card">
-            <i class="bi bi-file-earmark-text"></i>
-            <h4>Desktop Publishing</h4>
-        </div>
-    </div>
-
-    <!-- Advanced Digital Skills -->
-    <h3 style="text-align:center; margin:40px 0 20px;">Advanced Digital Skills (Coming Soon)</h3>
-    <div class="cards">
-        <div class="card">
-            <i class="bi bi-phone"></i>
-            <h4>App Development</h4>
-        </div>
-        <div class="card">
-            <i class="bi bi-globe"></i>
-            <h4>Web Development</h4>
-        </div>
-        <div class="card">
-            <i class="bi bi-palette"></i>
-            <h4>Graphics Designing</h4>
-        </div>
-        <div class="card">
-            <i class="bi bi-bar-chart"></i>
-            <h4>Data Analysis</h4>
-        </div>
-        <div class="card">
-            <i class="bi bi-camera-video"></i>
-            <h4>Videography</h4>
-        </div>
-    </div>
-</section>
-
-<!-- Benefits -->
-<section id="benefits">
-    <h2>What You Stand to Gain</h2>
-    <div class="cards">
-        <div class="card">
-            <i class="bi bi-gear-fill"></i>
-            <h3>Skill Mastery</h3>
-            <p>Gain practical skills in digital tools and platforms to succeed professionally.</p>
-        </div>
-        <div class="card">
-            <i class="bi bi-briefcase-fill"></i>
-            <h3>Career Advancement</h3>
-            <p>Boost your employability or start your own digital business confidently.</p>
-        </div>
-        <div class="card">
-            <i class="bi bi-stars"></i>
-            <h3>Confidence & Independence</h3>
-            <p>Learn to work independently and take on real-world digital projects.</p>
-        </div>
-    </div>
-</section>
-
-<!-- Testimonials -->
-<section id="testimonials">
-    <h2>Testimonials</h2>
-    <div class="cards">
-        <div class="card">
-            <p>"Mufat Digital Academy helped me land my first web design client! The training was practical and easy to follow." – Jane D.</p>
-        </div>
-        <div class="card">
-            <p>"The digital marketing course was life-changing. I now manage social media for a local business successfully." – Ahmed S.</p>
-        </div>
-    </div>
-</section>
-
-<!-- Call to Action -->
-<section class="cta">
-    <h2>Ready to Boost Your Digital Skills?</h2>
-    <a href="#contact">Enroll Now</a>
-</section>
-
-<!-- Contact -->
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p style="text-align:center;">Reach us via phone: <strong>09134291604</strong> or email: <strong>info@mufatdigital.com</strong></p>
-    <p style="text-align:center;">Visit us in Lafiagi, Kwara State, Nigeria</p>
-    <p style="text-align:center;"><a href="https://wa.me/2349134291604" target="_blank">Chat on WhatsApp</a></p>
-</section>
-
-<!-- Footer -->
-<footer>
-    <p>&copy; 2026 Mufat Digital Academy. All Rights Reserved.</p>
-</footer>
-
-<script>
-// Mobile menu toggle
-function toggleMenu() {
-    document.getElementById('nav-links').classList.toggle('active');
-}
-</script>
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Mufat Digital Academy | Lafiagi, Kwara State, Nigeria</p>
+        <p>Phone: 09134291604</p>
+    </footer>
 
 </body>
 </html>
