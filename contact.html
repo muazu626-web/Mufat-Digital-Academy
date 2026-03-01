@@ -43,7 +43,10 @@
 
         <!-- SIMPLE CONTACT / REGISTRATION FORM -->
         <div class="program-card">
-            <h2>Apply / Send a Message</h2>
+            <h2>Wants to apply? Fill this form and Send us a Message</h2>
+            <p id="successMessage" style="display:none; color:green; font-weight:600;">
+    ✅ Thank you! Your application has been received.
+</p>
             <form id="registrationForm" action="#" method="post">
 
     <label for="name">Full Name</label><br>
@@ -89,18 +92,51 @@
         <p>Phone: 09134291604</p>
     </footer>
 <script>
-    const programSelect = document.getElementById('program');
-    const advancedCoursesDiv = document.getElementById('advancedCoursesDiv');
+const form = document.getElementById('registrationForm');
+const programSelect = document.getElementById('program');
+const advancedCoursesDiv = document.getElementById('advancedCoursesDiv');
 
-    programSelect.addEventListener('change', function() {
-        if(this.value === 'advanced') {
-            advancedCoursesDiv.style.display = 'block';
-            document.getElementById('advancedCourse').required = true;
-        } else {
-            advancedCoursesDiv.style.display = 'none';
-            document.getElementById('advancedCourse').required = false;
+const scriptURL = "Phttps://script.google.com/macros/s/AKfycbw1Q8ssSR0C9djABzn9GG3RxRiNwMY8yMGxhufRbjkGDyZTmi_QDfrKBx595_ZYA0qO9w/exec";
+
+programSelect.addEventListener('change', function() {
+    if(this.value === 'advanced') {
+        advancedCoursesDiv.style.display = 'block';
+        document.getElementById('advancedCourse').required = true;
+    } else {
+        advancedCoursesDiv.style.display = 'none';
+        document.getElementById('advancedCourse').required = false;
+    }
+});
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        program: document.getElementById('program').value,
+        advancedCourse: document.getElementById('advancedCourse').value,
+        message: document.getElementById('message').value
+    };
+
+    fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+            "Content-Type": "application/json"
         }
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert("Application submitted successfully!");
+        form.reset();
+        advancedCoursesDiv.style.display = 'none';
+    })
+    .catch(error => {
+        alert("Something went wrong. Please try again.");
     });
+});
 </script>
 
 </body>

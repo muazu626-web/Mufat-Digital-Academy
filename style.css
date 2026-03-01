@@ -362,3 +362,18 @@ form button:hover {
         padding: 12px 24px;
     }
 }
+input:invalid, select:invalid {
+    border-color: red;
+}
+
+input:valid, select:valid {
+    border-color: green;
+}
+body {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
