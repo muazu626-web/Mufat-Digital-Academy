@@ -263,6 +263,17 @@ form button:hover {
         padding: 20px;
     }
 
+.navbar {
+    background: #c1121f;
+    padding: 15px 5%;  /* smaller side padding */
+}
+    .nav-container {
+        justify-content: space-between;
+    }
+
+    .academy-name {
+        font-size: 18px;
+    }
     .navbar ul {
         flex-direction: column;
         gap: 10px;
@@ -390,7 +401,7 @@ body {
 .nav-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    width: 100%;
 }
 
 .academy-name {
@@ -402,16 +413,21 @@ body {
 /* DESKTOP NAV */
 .nav-menu ul {
     display: flex;
-    gap: 30px;
+    gap: 40px; /* increase spacing */
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-menu ul li a {
-    color: white;
     text-decoration: none;
-    font-weight: 500;
+    color: white;
+    transition: all 0.3s ease;
 }
-
+.nav-menu ul li a:hover {
+    color: #ffb6c1;
+    transform: translateY(-2px);
+}
 /* HAMBURGER */
 .hamburger {
     display: none;
@@ -536,4 +552,8 @@ nav ul li a:hover {
     border-top: 1px solid rgba(255,255,255,0.3);
     padding-top: 15px;
     font-size: 14px;
+}
+.brand {
+    display: flex;
+    align-items: center;
 }
