@@ -733,3 +733,161 @@ nav ul li a:hover {
         display: flex;
     }
 }
+/* ================= HERO SECTION ================= */
+
+.hero {
+    position: relative;
+    color: white;
+    padding: 100px 5%;
+    text-align: center;
+
+    /* Background image with overlay */
+    background-image: url('hero-background.png'); /* <- put your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Gradient overlay */
+    background-blend-mode: overlay;
+    background-color: rgba(193, 18, 31, 0.7); /* red overlay with opacity */
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+.hero-buttons {
+    margin-bottom: 40px;
+}
+
+.btn-primary {
+    background: #ffb6c1;
+    color: #7a0000;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-right: 15px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: white;
+}
+
+.btn-secondary {
+    border: 2px solid white;
+    color: white;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #7a0000;
+}
+
+/* Stats */
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.hero-stats h3 {
+    font-size: 24px;
+}
+
+.hero-stats p {
+    font-size: 14px;
+}
+/* Enroll Now Button - Primary CTA */
+.btn-enroll {
+    background: #ffffff; /* white button */
+    color: #c1121f; /* primary red text */
+    padding: 16px 36px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.btn-enroll:hover {
+    background: #ffb6c1; /* baby pink on hover */
+    color: #7a0000;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+/* View Courses Button - Secondary */
+.btn-secondary {
+    border: 2px solid white;
+    color: white;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+    /* Pulse Animation for Enroll Now Button */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+        transform: scale(1.05);
+    }
+    100% {
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        transform: scale(1);
+    }
+}
+
+/* Apply animation */
+.btn-enroll {
+    animation: pulse 2s infinite ease-in-out;
+}
+    background: white;
+    color: #7a0000;
+}
+/* Pulse Animation for Enroll Now Button */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+        transform: scale(1.05);
+    }
+    100% {
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        transform: scale(1);
+    }
+}
+
+/* Apply animation */
+.btn-enroll {
+    animation: pulse 2s infinite ease-in-out;
+}

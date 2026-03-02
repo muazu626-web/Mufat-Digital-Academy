@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enroll | Mufat Digital Academy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="academy-name">Mufat Digital Academy</div>
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Enroll at Mufat Digital Academy</h1>
+        <p>Fill out your details and get started on your journey to gain practical digital skills!</p>
+    </section>
+
+     <!-- SIMPLE CONTACT / REGISTRATION FORM -->
+        <div class="program-card">
+            <h2>Wants to apply? Fill this form and Send us a Message</h2>
+            <p id="successMessage" style="display:none; color:green; font-weight:600;">
+    ✅ Thank you! Your application has been received.
+</p>
+            <form id="registrationForm" action="#" method="post">
+
+    <label for="name">Full Name</label><br>
+    <input type="text" id="name" name="name" placeholder="Your Name" required><br><br>
+
+    <label for="email">Email</label><br>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required><br><br>
+
+    <label for="phone">Phone Number</label><br>
+    <input type="tel" id="phone" name="phone" placeholder="08012345678" required><br><br>
+
+    <label for="program">Program Interested In</label><br>
+    <select id="program" name="program" required>
+        <option value="">Select Program</option>
+        <option value="foundational">Foundational Digital Skills</option>
+        <option value="advanced">Advanced Technical Skills</option>
+    </select><br><br>
+
+    <!-- This is the dependent dropdown for Advanced Technical Skills -->
+    <div id="advancedCoursesDiv" style="display:none;">
+        <label for="advancedCourse">Select Course</label><br>
+        <select id="advancedCourse" name="advancedCourse">
+            <option value="">Select Advanced Course</option>
+            <option value="appDevelopment">App Development</option>
+            <option value="webDevelopment">Web Development</option>
+            <option value="dataAnalysis">Data Analysis</option>
+            <option value="graphicsDesigning">Graphics Designing</option>
+            <option value="videography">Videography</option>
+        </select><br><br>
+    </div>
+
+    <label for="message">Message (Optional)</label><br>
+    <textarea id="message" name="message" rows="4" placeholder="Your message"></textarea><br><br>
+
+    <button type="submit" class="btn">Submit</button>
+</form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Mufat Digital Academy | Lafiagi, Kwara State, Nigeria</p>
+        <p>Phone: 09134291604</p>
+    </footer>
+<script>
+const form = document.getElementById('registrationForm');
+const programSelect = document.getElementById('program');
+const advancedCoursesDiv = document.getElementById('advancedCoursesDiv');
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbzOdFkxDXGCKKZ3g8_aHL_HuPN_3ZDTcD3Td46PckEy6bHX7uWxOkLRlxZmRccqdLzyQQ/exec";
+
+programSelect.addEventListener('change', function() {
+    if(this.value === 'advanced') {
+        advancedCoursesDiv.style.display = 'block';
+        document.getElementById('advancedCourse').required = true;
+    } else {
+        advancedCoursesDiv.style.display = 'none';
+        document.getElementById('advancedCourse').required = false;
+    }
+});
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    fetch(scriptURL, {
+        method: 'POST',
+        body: new FormData(form)
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert("Application submitted successfully!");
+        form.reset();
+        advancedCoursesDiv.style.display = 'none';
+    })
+    .catch(error => {
+        alert("Error submitting form: " + error);
+    });
+});
+</script>
+</body>
+</html>
