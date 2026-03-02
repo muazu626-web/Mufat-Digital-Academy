@@ -460,19 +460,35 @@ nav ul li a:hover {
     color: #ffe5e5; /* Light red hover */
 }
 
-/* HAMBURGER */
+/* Hamburger Container */
 .hamburger {
+    width: 30px;
+    height: 22px;
     display: none;
     flex-direction: column;
-    gap: 5px;
+    justify-content: space-between;
     cursor: pointer;
 }
 
+/* Hamburger Lines */
 .hamburger span {
-    width: 25px;
     height: 3px;
-    background: #ffffff;
-    transition: 0.3s;
+    width: 100%;
+    background: white;
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+/* Transform into X */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 /* MOBILE */
 @media (max-width: 768px) {
@@ -657,7 +673,7 @@ nav ul li a:hover {
 .whatsapp-float:hover {
     transform: scale(1.1);
 }
-/* ================= NEWSLETTER (CLEAN VERSION) ================= */
+/* ================= NEWSLETTER (STACKED VERSION) ================= */
 
 .newsletter {
     margin-top: 25px;
@@ -665,21 +681,21 @@ nav ul li a:hover {
 }
 
 .newsletter h3 {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     font-size: 16px;
 }
 
-/* Form Layout */
+/* Form Layout - Always Vertical */
 .newsletter-form {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column;
+    gap: 12px;
 }
 
 /* Email Input */
 .newsletter-form input {
-    flex: 1;
-    padding: 12px;
+    width: 100%;
+    padding: 14px;
     border-radius: 6px;
     border: none;
     outline: none;
@@ -688,7 +704,8 @@ nav ul li a:hover {
 
 /* Button */
 .newsletter-form button {
-    padding: 12px 20px;
+    width: 100%;
+    padding: 14px;
     border-radius: 6px;
     border: none;
     background: #ffb6c1;
@@ -709,5 +726,10 @@ nav ul li a:hover {
 
     .newsletter-form button {
         width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
     }
 }
