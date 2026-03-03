@@ -915,3 +915,92 @@ nav ul li a:hover {
     }
 
 }
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 70px 20px;   /* reduce spacing */
+        background-position: top center; /* adjust image focus */
+    }
+
+}
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 70px 20px;   /* reduce spacing */
+        background-position: top center; /* adjust image focus */
+    }
+
+}
+@media (max-width: 768px) {
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;   /* space between buttons */
+        align-items: center;
+    }
+
+    .btn-enroll,
+    .btn-secondary {
+        width: 85%;
+        text-align: center;
+    }
+
+}
+/* ================= ENROLL FORM SECTION ================= */
+
+.form {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;   /* centers horizontally */
+}
+
+.program-card {
+    width: 100%;
+    max-width: 650px;   /* controls width on desktop */
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+/* Make form inputs clean */
+#registrationForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#registrationForm input,
+#registrationForm select,
+#registrationForm textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+/* Submit button styling */
+#registrationForm .btn {
+    margin-top: 15px;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background: #c1121f;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#registrationForm .btn:hover {
+    background: #7a0000;
+}
+@media (max-width: 768px) {
+
+    .program-card {
+        padding: 25px;
+    }
+
+}
